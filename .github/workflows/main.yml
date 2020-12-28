@@ -16,4 +16,4 @@ jobs:
         BUILD_DIR: docs/
 
         # The build script the action should run prior to deploying.
-        BUILD_SCRIPT: cd docs && yarn install && yarn run build
+        BUILD_SCRIPT: cd docs && yarn install && yarn run build && cd ..
