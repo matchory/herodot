@@ -1,7 +1,3 @@
----
-permalink: /documenting/
----
-
 Documenting your API
 ====================
 Herodot supports several different ways to add metadata to your endpoints. We call them _strategies_.  

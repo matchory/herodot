@@ -1,0 +1,12 @@
+{
+  "name": "herodot-docs",
+  "version": "3.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vuepress dev .",
+    "build": "vuepress build ."
+  },
+  "devDependencies": {
+    "vuepress": "^1.7.1"
+  }
+}

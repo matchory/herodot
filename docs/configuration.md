@@ -1,7 +1,3 @@
----
-permalink: /configuration/
----
-
 Configuration Reference
 =======================
 This section provides information about all available configuration values.
