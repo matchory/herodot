@@ -1,0 +1,55 @@
+{
+  "name": "matchory/herodot",
+  "description": "A versatile documentation generator for APIs built with Laravel.",
+  "type": "library",
+  "license": "mit",
+  "authors": [
+    {
+      "name": "Moritz Friedrich",
+      "email": "moritz@matchory.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Matchory\\Herodot\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Matchory\\Herodot\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "ext-json": "*",
+    "illuminate/support": "^8",
+    "illuminate/console": "^8",
+    "illuminate/routing": "^8",
+    "ramsey/uuid": "^4.1",
+    "illuminate/events": "^8",
+    "phpdocumentor/reflection-docblock": "^5.2",
+    "illuminate/http": "^8",
+    "nikic/php-parser": "^4.10",
+    "marcj/topsort": "^2.0",
+    "symfony/yaml": "^5.2",
+    "zircote/swagger-php": "^3.1",
+    "cebe/php-openapi": "^1.4"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Matchory\\Herodot\\HerodotServiceProvider"
+      ]
+    }
+  },
+  "suggest": {
+    "ext-yaml": "For native YAML support"
+  },
+  "require-dev": {
+    "vimeo/psalm": "^4.3",
+    "roave/security-advisories": "dev-latest"
+  }
+}

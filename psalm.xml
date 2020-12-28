@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<psalm errorLevel="2"
+       resolveFromConfigFile="true"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="https://getpsalm.org/schema/config"
+       xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd">
+    <projectFiles>
+        <directory name="src"/>
+        <ignoreFiles>
+            <directory name="vendor"/>
+        </ignoreFiles>
+    </projectFiles>
+
+    <issueHandlers>
+        <UndefinedAttributeClass>
+            <errorLevel type="suppress">
+
+                <!-- That's okay, these attributes are only used for IDE completion -->
+                <referencedClass name="JetBrains\PhpStorm\Pure"/>
+                <referencedClass name="JetBrains\PhpStorm\NoReturn"/>
+                <referencedClass name="JetBrains\PhpStorm\ArrayShape"/>
+            </errorLevel>
+        </UndefinedAttributeClass>
+
+        <InvalidArgument>
+            <errorLevel type="suppress">
+                <referencedFunction name="Attribute::__construct"/>
+            </errorLevel>
+        </InvalidArgument>
+
+        <PropertyNotSetInConstructor>
+            <errorLevel type="suppress">
+                <referencedProperty name="Illuminate\Console\Command::$name"/>
+                <referencedProperty name="Illuminate\Console\Command::$input"/>
+                <referencedProperty name="Illuminate\Console\Command::$output"/>
+                <referencedProperty name="Illuminate\Console\Command::$laravel"/>
+                <directory name="src/Console/Commands"/>
+            </errorLevel>
+        </PropertyNotSetInConstructor>
+    </issueHandlers>
+</psalm>
