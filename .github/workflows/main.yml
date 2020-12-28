@@ -11,5 +11,9 @@ jobs:
       uses: testthedocs/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BUILD_DIR: docs/ # The folder the action should deploy.
-        BUILD_SCRIPT: yarn install && yarn run build # The build script the action should run prior to deploying.
+
+        # The folder the action should deploy.
+        BUILD_DIR: docs/
+
+        # The build script the action should run prior to deploying.
+        BUILD_SCRIPT: cd docs && yarn install && yarn run build
