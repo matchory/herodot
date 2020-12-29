@@ -44,7 +44,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Information extraction strategies
+    | Extraction strategies
     |--------------------------------------------------------------------------
     |
     | This array of class names will be used to extract information from your
