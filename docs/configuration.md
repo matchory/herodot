@@ -40,7 +40,7 @@ return [
 
 Active Extraction Strategies
 ----------------------------
-This list contains all active [extraction strategies](./strategies.md) you want to run during information gathering. By default, all available strategies will 
+This list contains all active [extraction strategies](./strategies.md) you want to run during information gathering. By default, all available strategies will
 be executed, but you can add your own strategy or a third-party extension strategy here.  
 Make sure to list all strategies your application requires.
 
