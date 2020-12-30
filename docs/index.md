@@ -1,5 +1,6 @@
 ---
 home: true
+heroImage: /images/herodot.jpg
 actionText: Get Started →
 actionLink: guide/index.md
 footer: MIT Licensed | Copyright © 2020-present Matchory GmbH

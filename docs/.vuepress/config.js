@@ -39,6 +39,7 @@ function getGuideSidebar( groupA, groupB ) {
                 [ 'installation', 'Installation' ],
                 [ 'usage', 'Usage' ],
                 [ 'strategies', 'Documenting your API' ],
+                [ 'generating-docs', 'Generating Documentation' ],
             ],
         },
         {
@@ -47,6 +48,7 @@ function getGuideSidebar( groupA, groupB ) {
             children:    [
                 [ 'extensions', 'Extending Herodot' ],
                 [ 'custom-strategies', 'Custom Strategies' ],
+                [ 'custom-printers', 'Custom Printers' ],
             ],
         },
     ];

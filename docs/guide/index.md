@@ -1,5 +1,8 @@
 Introduction
 ============
+**Herodot is a versatile documentation generator for APIs created with [Laravel](https://laravel.com/).** It parses your source code and automatically builds
+documentation in a variety of formats.
+
 Herodot supports several different ways to add metadata to your endpoints. We call them _strategies_.  
 This package ships with several different strategies (but you can easily [add your own](custom-strategies.md)): PHP Attributes,
 documentation comments, OpenAPI annotations (thanks to [zircote/swagger-php](https://github.com/zircote/swagger-php)), static analysis and overrides from your

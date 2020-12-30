@@ -1,3 +1,6 @@
+---
+sidebar: 'auto'
+---
 Configuration Reference
 =======================
 This section provides information about all available configuration values.
@@ -43,7 +46,6 @@ Active Extraction Strategies
 This list contains all active [extraction strategies](./strategies.md) you want to run during information gathering. By default, all available strategies will
 be executed, but you can add your own strategy or a third-party extension strategy here.  
 Make sure to list all strategies your application requires.
-
 ```php
 return [
     'strategies' => [
@@ -55,6 +57,33 @@ return [
     ],
 ];
 ```
+
+OpenAPI
+-------
+The OpenAPI section allows you to customize the way the [OpenAPI file](guide/generating-docs.md#openapi-specification) is written.
+```php
+return [
+    'openapi' => [
+        'version' => '1.0.0',
+        'name' => env('APP_NAME'),
+        'api_url' => env('APP_URL'),
+        'output_format' => 'yaml',
+        'output_file' => public_path('openapi.yaml'),
+    ],
+];
+```
+
+### Available Settings
+- `version`  
+  The current version of your API. Corresponds to the [`info.version`](https://swagger.io/docs/specification/basic-structure/#metadata) field in the spec.
+- `name`  
+  The name of your API. Corresponds to the [`info.title`](https://swagger.io/docs/specification/basic-structure/#metadata) field in the spec.
+- `api_url`  
+  The name of your API. Corresponds to the [`servers[0].url`](https://swagger.io/docs/specification/basic-structure/#servers) field in the spec.
+- `output_format`  
+  OpenAPI allows JSON or YAML as its file format. Accordingly, you may use `yaml` or `json` here to set the format the OpenAPI writer should use.
+- `output_file`  
+  The path to the OpenAPI file being generated.
 
 Code Inference
 --------------
