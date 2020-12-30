@@ -3,6 +3,10 @@ module.exports = {
     base:        '/herodot/',
     description: 'A versatile documentation generator for APIs built with Laravel.',
     themeConfig: {
+        repo:         'matchory/herodot',
+        docsDir:      'docs',
+        docsBranch:   'main',
+        editLinks:    true,
         editLinkText: 'Edit this page on GitHub',
         lastUpdated:  'Last Updated',
 
@@ -13,8 +17,15 @@ module.exports = {
             { text: 'Guide', link: '/guide/' },
             { text: 'Configuration', link: '/configuration' },
             { text: 'Extensions', link: '/guide/extensions' },
-            { text: 'Github', link: 'https://github.com/matchory/herodot' },
         ],
+
+        smoothScroll: true,
+
+        searchPlaceholder: 'Search...',
+        algolia:           {
+            apiKey:    'c1977f79b897ef9bd4a2ea6600cb7916',
+            indexName: 'herodot_docs',
+        },
     },
 };
 
@@ -27,15 +38,15 @@ function getGuideSidebar( groupA, groupB ) {
                 [ '', 'Introduction' ],
                 [ 'installation', 'Installation' ],
                 [ 'usage', 'Usage' ],
-                ['strategies', 'Documenting your API']
+                [ 'strategies', 'Documenting your API' ],
             ],
         },
         {
             title:       groupB,
             collapsable: false,
             children:    [
-                ['extensions', 'Extending Herodot'],
-                ['custom-strategies', 'Custom Strategies']
+                [ 'extensions', 'Extending Herodot' ],
+                [ 'custom-strategies', 'Custom Strategies' ],
             ],
         },
     ];
