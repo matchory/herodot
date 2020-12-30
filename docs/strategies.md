@@ -14,15 +14,16 @@ with full support for type hints, named properties and so on, they are _perfectl
 > Attributes can also be set on controllers, causing them to be inherited by all of its methods. This makes it easy to share common attributes by adding them to
 > a base class, or setting a group on controllers.
 
+All attributes live in the `Matchory\Herodot\Attributes` namespace, but your IDE should autocomplete them anyway.
 
-### Title (`Matchory\Herodot\Attributes\Title`)
+### Title
 Adds a title to the endpoint. This attribute only has a single parameter for the title text. The title is intended to be used for single-line headings, and thus
 you should expect line breaks to be removed.
 ```php
 #[Title('Endpoint title')]
 ```
 
-### Description (`Matchory\Herodot\Attributes\Description`)
+### Description
 Adds a description to the endpoint. This attribute only has a single parameter for the description text. In contrary to the title, the description can take any
 length. All long-form text will be parsed as markdown (with HTML support) later on, just keep in mind that some output formats may not provide formatting
 options or do not support all of them.
@@ -30,11 +31,11 @@ options or do not support all of them.
 #[Description("This is\na description text.")]
 ```
 
-### Group (`Matchory\Herodot\Attributes\Group`)
+### Group
 Adds the endpoint to a group. By default, all endpoints are in a group with an empty name, but by adding the `Group` attribute to an endpoint, you can move them
 into another group. This allows an easy way to add structure to your documentation, for example by grouping all user endpoints.  
 Endpoints may only be added to a single group. If you're looking for a way to _tag_ endpoints instead, take a look at the
-[Meta Attribute](#meta-matchoryherodotattributesmeta).
+[Meta Attribute](#meta).
 ```php
 #[Group('Example endpoints')]
 ```
@@ -47,7 +48,7 @@ The `Group` attribute allows including arbitrary metadata as a key-value map:
 ```
 Metadata will be stored alongside the attribute and may be used differently depending on the output printer.
 
-### Hidden (`Matchory\Herodot\Attributes\Hidden`)
+### Hidden
 Marks the endpoint as hidden, subsequently omitting it from the documentation output--unless, that is, you use an output target that explicitly includes hidden
 routes (which may be useful for internal developer docs, for example).
 ```php
@@ -59,7 +60,7 @@ You can optionally specify a reason. It may be shown depending on the output pri
 #[Hidden('An optional reason')]
 ```
 
-### Internal (`Matchory\Herodot\Attributes\Internal`)
+### Internal
 Marks the endpoint as internal. Internal endpoints should not be relied upon by end users, because they may be changed or removed at any time, but should still
 appear in your documentation for one reason or another.
 ```php
@@ -79,7 +80,7 @@ Additionally, the `Internal` attribute allows including arbitrary metadata as a 
 ```
 Metadata will be stored alongside the attribute and may be used differently depending on the output printer.
 
-### Deprecated (`Matchory\Herodot\Attributes\Deprecated`)
+### Deprecated
 Marks the endpoint as deprecated. Deprecated endpoints should not be used anymore and may be removed in a future version.
 ```php
 #[Deprecated()]
@@ -104,17 +105,17 @@ Additionally, the `Deprecated` attribute allows including arbitrary metadata as 
 ```
 Metadata will be stored alongside the attribute and may be used differently depending on the output printer.
 
-### Authenticated (`Matchory\Herodot\Attributes\Authenticated`)
-### Unauthenticated (`Matchory\Herodot\Attributes\Unauthenticated`)
-### Accepts (`Matchory\Herodot\Attributes\Accepts`)
-### Header (`Matchory\Herodot\Attributes\Header`)
-### URL Parameters (`Matchory\Herodot\Attributes\UrlParam`)
-### Query Parameters (`Matchory\Herodot\Attributes\QueryParam`)
-### Body Parameters (`Matchory\Herodot\Attributes\BodyParam`)
-### Response (`Matchory\Herodot\Attributes\Response`)
-### ResponseFile (`Matchory\Herodot\Attributes\ResponseFile`)
+### Authenticated
+### Unauthenticated
+### Accepts
+### Header
+### URL Parameters
+### Query Parameters
+### Body Parameters
+### Response
+### ResponseFile
 
-### Meta (`Matchory\Herodot\Attributes\Meta`)
+### Meta
 Adds arbitrary metadata to an endpoint. This provides for a good way to extend Herodot in ways you see fit, without having to write an extension.
 ```php
 #[Meta('Key')]
@@ -184,7 +185,7 @@ You can fit your strategy in wherever you see fit, but make sure no other strate
 
 ### Depending on other strategies
 Sometimes, it's essential your strategy is run after another one. For these cases, you can declare dependencies: Herodot will make sure your strategy is invoked
-after all dependencies have been executed. This is achieved using a dependency graph in the background, which sorts out any chain of complex dependencies, but 
+after all dependencies have been executed. This is achieved using a dependency graph in the background, which sorts out any chain of complex dependencies, but
 take care not to form cycles: Herodot will bail out in that case.
 ```php
 
