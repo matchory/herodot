@@ -55,7 +55,7 @@ class OpenApiStrategy implements ExtractionStrategy
 
     #[Pure] public function getPriority(): int
     {
-        return 95;
+        return 90;
     }
 
     /**

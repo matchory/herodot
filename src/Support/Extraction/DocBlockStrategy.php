@@ -76,7 +76,7 @@ class DocBlockStrategy implements ExtractionStrategy
 
     #[Pure] public function getPriority(): int
     {
-        return 90;
+        return 30;
     }
 
     /**

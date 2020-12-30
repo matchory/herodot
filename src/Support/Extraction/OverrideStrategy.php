@@ -61,7 +61,7 @@ class OverrideStrategy implements ExtractionStrategy
 
     #[Pure] public function getPriority(): int
     {
-        return 120;
+        return 999;
     }
 
     public function handle(

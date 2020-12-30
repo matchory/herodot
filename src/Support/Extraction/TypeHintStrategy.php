@@ -28,7 +28,7 @@ class TypeHintStrategy implements ExtractionStrategy
 
     #[Pure] public function getPriority(): int
     {
-        return 110;
+        return 60;
     }
 
     /**

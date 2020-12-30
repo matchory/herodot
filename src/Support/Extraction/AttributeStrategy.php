@@ -55,7 +55,7 @@ class AttributeStrategy implements ExtractionStrategy
 
     #[Pure] public function getPriority(): int
     {
-        return 100;
+        return 120;
     }
 
     /**

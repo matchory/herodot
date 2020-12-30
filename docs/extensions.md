@@ -1,7 +1,7 @@
 Extension guide
 ===============
-
-### Adding an extraction strategy
+Welcome to the extension guide! This page will show you how to create extension modules for Herodot, no matter whether it's a simple extension inside your 
+application, or a fully-fledged, composer-distributed package.
 
 Why we need PHP 8
 -----------------
