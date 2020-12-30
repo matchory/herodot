@@ -13,7 +13,7 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
         # The folder the action should deploy.
-        BUILD_DIR: docs/
+        BUILD_DIR: docs/.vuepress/dist
 
         # The build script the action should run prior to deploying.
         BUILD_SCRIPT: cd docs && yarn install && yarn run build && cd ..
