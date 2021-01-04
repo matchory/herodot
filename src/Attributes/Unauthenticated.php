@@ -15,12 +15,7 @@ use Matchory\Herodot\Contracts\Attribute as HerodotAttribute;
 )]
 class Unauthenticated implements HerodotAttribute
 {
-    #[Pure] public function __construct(protected ?string $guard = null)
+    #[Pure] public function __construct()
     {
-    }
-
-    #[Pure] public function getGuard(): ?string
-    {
-        return $this->guard;
     }
 }

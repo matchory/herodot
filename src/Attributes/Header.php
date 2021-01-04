@@ -20,6 +20,7 @@ class Header implements HerodotAttribute
 
     public function __construct(
         protected string $name,
+        protected ?string $description = null,
         protected mixed $example = null,
         ?array $meta = null
     ) {
@@ -29,6 +30,11 @@ class Header implements HerodotAttribute
     #[Pure] public function getName(): string
     {
         return $this->name;
+    }
+
+    #[Pure] public function getDescription(): ?string
+    {
+        return $this->description;
     }
 
     #[Pure] public function getExample(): mixed

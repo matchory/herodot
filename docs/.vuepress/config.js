@@ -39,6 +39,7 @@ function getGuideSidebar( groupA, groupB ) {
                 [ 'installation', 'Installation' ],
                 [ 'usage', 'Usage' ],
                 [ 'strategies', 'Documenting your API' ],
+                [ 'types', 'Types' ],
                 [ 'generating-docs', 'Generating Documentation' ],
             ],
         },

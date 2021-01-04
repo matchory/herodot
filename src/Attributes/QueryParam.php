@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Matchory\Herodot\Attributes;
 
 use Attribute;
+use LogicException;
 
 #[Attribute(
     Attribute::IS_REPEATABLE |
@@ -17,6 +18,21 @@ class QueryParam
     use IsParameter;
     use HasMetaData;
 
+    /**
+     * QueryParam constructor.
+     *
+     * @param string      $name
+     * @param string|null $type
+     * @param string|null $description
+     * @param bool        $required
+     * @param mixed|null  $default
+     * @param mixed|null  $example
+     * @param bool        $deprecated
+     * @param array|null  $validationRules
+     * @param array|null  $meta
+     *
+     * @throws LogicException
+     */
     public function __construct(
         string $name,
         ?string $type = null,
@@ -24,11 +40,7 @@ class QueryParam
         bool $required = false,
         mixed $default = null,
         mixed $example = null,
-        ?bool $deprecated = null,
-        ?string $deprecatedSince = null,
-        ?string $deprecationReason = null,
-        bool $readOnly = false,
-        bool $writeOnly = false,
+        bool $deprecated = false,
         ?array $validationRules = null,
         ?array $meta = null
     ) {
@@ -38,16 +50,11 @@ class QueryParam
         $this->setRequired($required);
         $this->setDefault($default);
         $this->setExample($example);
-        $this->setReadOnly($readOnly);
-        $this->setWriteOnly($writeOnly);
         $this->setValidationRules($validationRules);
         $this->setMeta($meta);
 
         if ($deprecated) {
-            $this->setDeprecation(
-                $deprecationReason,
-                $deprecatedSince
-            );
+            $this->setDeprecation();
         }
     }
 }

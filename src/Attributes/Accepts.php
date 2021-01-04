@@ -19,16 +19,16 @@ class Accepts implements HerodotAttribute
     use HasMetaData;
 
     public function __construct(
-        protected string $contentType,
+        protected string $mediaType,
         protected ?string $description = null,
         ?array $meta = []
     ) {
         $this->setMeta($meta);
     }
 
-    #[Pure] public function getContentType(): string
+    #[Pure] public function getMediaType(): string
     {
-        return $this->contentType;
+        return $this->mediaType;
     }
 
     #[Pure] public function getDescription(): ?string

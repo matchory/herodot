@@ -104,7 +104,7 @@ class AttributeStrategy implements ExtractionStrategy
             /** @var Accepts $acceptedType */
             foreach ($acceptedTypes as $acceptedType) {
                 $endpoint->addAcceptedContentType(
-                    $acceptedType->getContentType(),
+                    $acceptedType->getMediaType(),
                     $acceptedType->getDescription(),
                     $acceptedType->getMeta()
                 );

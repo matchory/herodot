@@ -51,6 +51,7 @@ class HerodotController extends Controller
      */
     public function openapi(): BinaryFileResponse
     {
+
         return Response::file($this->disk()->get(
             'herodot/openapi.yaml'
         ));

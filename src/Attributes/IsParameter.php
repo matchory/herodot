@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Matchory\Herodot\Attributes;
 
 use JetBrains\PhpStorm\Pure;
+use LogicException;
 use Matchory\Herodot\Support\Structures\Deprecation;
 
 trait IsParameter
@@ -64,8 +65,19 @@ trait IsParameter
         return $this->required;
     }
 
+    /**
+     * @param bool $required
+     *
+     * @throws LogicException
+     */
     protected function setRequired(bool $required): void
     {
+        if ($required && $this->default) {
+            throw new LogicException(
+                'Required parameters may not have a default'
+            );
+        }
+
         $this->required = $required;
     }
 
@@ -84,8 +96,19 @@ trait IsParameter
         return $this->example;
     }
 
+    /**
+     * @param mixed $example
+     *
+     * @throws LogicException
+     */
     protected function setDefault(mixed $example): void
     {
+        if ($this->required) {
+            throw new LogicException(
+                'Required parameters may not have a default'
+            );
+        }
+
         $this->example = $example;
     }
 

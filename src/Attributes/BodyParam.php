@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Matchory\Herodot\Attributes;
 
 use Attribute;
+use LogicException;
 use Matchory\Herodot\Contracts\Attribute as HerodotAttribute;
 
 #[Attribute(
@@ -18,6 +19,23 @@ class BodyParam implements HerodotAttribute
     use IsParameter;
     use HasMetaData;
 
+    /**
+     * BodyParam constructor.
+     *
+     * @param string      $name
+     * @param string|null $type
+     * @param string|null $description
+     * @param bool        $required
+     * @param mixed|null  $default
+     * @param mixed|null  $example
+     * @param bool|null   $deprecated
+     * @param bool        $readOnly
+     * @param bool        $writeOnly
+     * @param array|null  $validationRules
+     * @param array|null  $meta
+     *
+     * @throws LogicException
+     */
     public function __construct(
         string $name,
         ?string $type = null,
@@ -26,8 +44,6 @@ class BodyParam implements HerodotAttribute
         mixed $default = null,
         mixed $example = null,
         ?bool $deprecated = null,
-        ?string $deprecatedSince = null,
-        ?string $deprecationReason = null,
         bool $readOnly = false,
         bool $writeOnly = false,
         ?array $validationRules = null,
@@ -45,10 +61,7 @@ class BodyParam implements HerodotAttribute
         $this->setMeta($meta);
 
         if ($deprecated) {
-            $this->setDeprecation(
-                $deprecationReason,
-                $deprecatedSince
-            );
+            $this->setDeprecation();
         }
     }
 }
