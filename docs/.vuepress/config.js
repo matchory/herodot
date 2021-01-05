@@ -23,8 +23,8 @@ module.exports = {
 
         searchPlaceholder: 'Search...',
         algolia:           {
-            apiKey:    'c1977f79b897ef9bd4a2ea6600cb7916',
-            indexName: 'herodot_docs',
+            apiKey:    'bdc970b323ae8878bdf507cdf58545d0',
+            indexName: 'herodot',
         },
     },
 };
