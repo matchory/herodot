@@ -66,7 +66,7 @@ This causes the configuration file to be published to `config/herodot.php`. Chec
 
 Documenting your API
 --------------------
-Check out [the documentation](https://matchory.github.io/herodot/documenting/) to learn how to document your API!
+Check out [the documentation](https://matchory.github.io/herodot/guide/strategies.html) to learn how to document your API!
 
 Contributing
 ------------
