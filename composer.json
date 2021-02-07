@@ -36,7 +36,8 @@
     "marcj/topsort": "^2.0",
     "symfony/yaml": "^5.2",
     "zircote/swagger-php": "^3.1",
-    "cebe/php-openapi": "^1.4"
+    "cebe/php-openapi": "^1.4",
+    "illuminate/config": "^8.21"
   },
   "extra": {
     "laravel": {
