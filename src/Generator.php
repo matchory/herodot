@@ -184,15 +184,14 @@ class Generator
      *
      * @return Collection
      * @throws FileNotFoundException
+     * @noinspection UnserializeExploitsInspection
      */
     protected function loadCached(string $hash): Collection
     {
         $path = $this->resolveCachePath($hash);
         $data = Storage::disk('local')->get($path);
 
-        return unserialize($data, [
-            'allowed_classes' => [Collection::class],
-        ]);
+        return unserialize($data);
     }
 
     /**
