@@ -7,8 +7,6 @@ namespace Matchory\Herodot\Printing;
 use Illuminate\Support\Collection;
 use Matchory\Herodot\Contracts\Printer;
 
-use function dd;
-
 /**
  * JSON Printer
  * ============
