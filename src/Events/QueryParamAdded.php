@@ -7,7 +7,7 @@ namespace Matchory\Herodot\Events;
 use JetBrains\PhpStorm\Pure;
 use Matchory\Herodot\Contracts\Endpoint;
 use Matchory\Herodot\Contracts\Event;
-use Matchory\Herodot\Support\Structures\QueryParam;
+use Matchory\Herodot\Entities\QueryParam;
 
 class QueryParamAdded implements Event
 {

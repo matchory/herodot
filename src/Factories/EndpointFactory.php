@@ -7,7 +7,7 @@ namespace Matchory\Herodot\Factories;
 use JetBrains\PhpStorm\Pure;
 use Matchory\Herodot\Contracts\Endpoint as EndpointContract;
 use Matchory\Herodot\Contracts\EndpointFactory as Factory;
-use Matchory\Herodot\Support\Structures\Endpoint;
+use Matchory\Herodot\Entities\Endpoint;
 
 class EndpointFactory implements Factory
 {

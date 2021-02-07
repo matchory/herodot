@@ -14,7 +14,7 @@ use Matchory\Herodot\Contracts\RouteCollector;
 use Matchory\Herodot\Contracts\RouteProcessor;
 use Matchory\Herodot\Contracts\RouteResolver;
 use Matchory\Herodot\Exceptions\PrinterException;
-use Matchory\Herodot\Support\Generator;
+use Matchory\Herodot\Generator;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Input\InputOption;
 

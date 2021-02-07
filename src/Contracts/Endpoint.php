@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace Matchory\Herodot\Contracts;
 
 use JetBrains\PhpStorm\Pure;
-use Matchory\Herodot\Support\Structures\BodyParam;
-use Matchory\Herodot\Support\Structures\ContentType;
-use Matchory\Herodot\Support\Structures\Deprecation;
-use Matchory\Herodot\Support\Structures\QueryParam;
-use Matchory\Herodot\Support\Structures\Response;
-use Matchory\Herodot\Support\Structures\UrlParam;
-use Matchory\Herodot\Support\Types\TypeDefinition;
+use Matchory\Herodot\Entities\BodyParam;
+use Matchory\Herodot\Entities\ContentType;
+use Matchory\Herodot\Entities\Deprecation;
+use Matchory\Herodot\Entities\QueryParam;
+use Matchory\Herodot\Entities\Response;
+use Matchory\Herodot\Entities\UrlParam;
+use Matchory\Herodot\Types\TypeDefinition;
 
 interface Endpoint
 {

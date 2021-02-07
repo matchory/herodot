@@ -16,11 +16,11 @@ use Matchory\Herodot\Contracts\RouteCollector as CollectorContract;
 use Matchory\Herodot\Contracts\RouteProcessor as ProcessorContract;
 use Matchory\Herodot\Contracts\RouteResolver as ResolverContract;
 use Matchory\Herodot\Factories\EndpointFactory;
-use Matchory\Herodot\Support\Printing\DocumentationWriter;
-use Matchory\Herodot\Support\Printing\OpenApiPrinter;
-use Matchory\Herodot\Support\Processing\RouteProcessor;
-use Matchory\Herodot\Support\RouteCollection\RouteCollector;
-use Matchory\Herodot\Support\RouteCollection\RouteResolver;
+use Matchory\Herodot\Printing\DocumentationWriter;
+use Matchory\Herodot\Printing\OpenApiPrinter;
+use Matchory\Herodot\Processing\RouteProcessor;
+use Matchory\Herodot\RouteCollecting\RouteCollector;
+use Matchory\Herodot\RouteCollecting\RouteResolver;
 use phpDocumentor\Reflection\DocBlockFactory;
 use phpDocumentor\Reflection\DocBlockFactoryInterface;
 

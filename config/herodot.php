@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-use Matchory\Herodot\Support\Extraction\AttributeStrategy;
-use Matchory\Herodot\Support\Extraction\DocBlockStrategy;
-use Matchory\Herodot\Support\Extraction\OpenApiStrategy;
-use Matchory\Herodot\Support\Extraction\OverrideStrategy;
-use Matchory\Herodot\Support\Extraction\TypeHintStrategy;
-use Matchory\Herodot\Support\Printing\JsonPrinter;
-use Matchory\Herodot\Support\Printing\OpenApiPrinter;
+use Matchory\Herodot\Extracting\AttributeStrategy;
+use Matchory\Herodot\Extracting\DocBlockStrategy;
+use Matchory\Herodot\Extracting\OpenApiStrategy;
+use Matchory\Herodot\Extracting\OverrideStrategy;
+use Matchory\Herodot\Extracting\TypeHintStrategy;
+use Matchory\Herodot\Printing\JsonPrinter;
+use Matchory\Herodot\Printing\MarkdownPrinter;
+use Matchory\Herodot\Printing\OpenApiPrinter;
 
 return [
 

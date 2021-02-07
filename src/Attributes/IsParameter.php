@@ -6,7 +6,7 @@ namespace Matchory\Herodot\Attributes;
 
 use JetBrains\PhpStorm\Pure;
 use LogicException;
-use Matchory\Herodot\Support\Structures\Deprecation;
+use Matchory\Herodot\Entities\Deprecation;
 
 trait IsParameter
 {
