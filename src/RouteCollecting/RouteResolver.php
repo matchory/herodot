@@ -6,6 +6,7 @@ namespace Matchory\Herodot\RouteCollecting;
 
 use Closure;
 use Illuminate\Routing\Route;
+use Illuminate\Routing\ViewController;
 use JetBrains\PhpStorm\ArrayShape;
 use Matchory\Herodot\Contracts\RouteResolver as Contract;
 use Matchory\Herodot\Interfaces\ResolvedRouteInterface;

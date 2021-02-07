@@ -106,10 +106,6 @@ class RouteCollector implements Contract
         /** @var class-string $controller */
         $controller = $route->getController();
 
-        if (is_a($controller, ViewController::class)) {
-            return false;
-        }
-
         if (is_a($controller, RedirectController::class)) {
             return false;
         }

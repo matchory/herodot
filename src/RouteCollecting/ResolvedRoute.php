@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Matchory\Herodot\RouteCollecting;
 
 use Illuminate\Routing\Route;
+use Illuminate\Routing\ViewController;
 use Illuminate\Support\Facades\File;
 use Matchory\Herodot\Interfaces\ResolvedRouteInterface;
 use ReflectionClass;
@@ -26,6 +27,11 @@ class ResolvedRoute implements ResolvedRouteInterface
         protected ReflectionClass $controllerReflector,
         protected ReflectionFunctionAbstract $handlerReflector
     ) {
+    }
+
+    public function isView(): bool
+    {
+        return $this->route->getController() === ViewController::class;
     }
 
     /**
