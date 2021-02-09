@@ -7,8 +7,8 @@ use Matchory\Herodot\Extracting\DocBlockStrategy;
 use Matchory\Herodot\Extracting\OpenApiStrategy;
 use Matchory\Herodot\Extracting\OverrideStrategy;
 use Matchory\Herodot\Extracting\TypeHintStrategy;
+use Matchory\Herodot\Printing\BladePrinter;
 use Matchory\Herodot\Printing\JsonPrinter;
-use Matchory\Herodot\Printing\MarkdownPrinter;
 use Matchory\Herodot\Printing\OpenApiPrinter;
 
 return [
@@ -82,6 +82,7 @@ return [
         JsonPrinter::class,
         // YamlPrinter::class,
         OpenApiPrinter::class,
+        BladePrinter::class,
     ],
 
     /*
