@@ -118,7 +118,7 @@ class RouteProcessor implements Contract
             try {
                 $strategy->handle($resolvedRoute, $endpoint);
             } catch (Throwable $exception) {
-                $this->handleError(
+                $endpoint = $this->handleError(
                     sprintf(
                         "Extraction strategy %s caused an error: %s",
                         $strategy::class,
