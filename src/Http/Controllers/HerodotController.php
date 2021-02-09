@@ -6,12 +6,11 @@ namespace Matchory\Herodot\Http\Controllers;
 
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Contracts\Filesystem\Filesystem;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\View as ViewFacade;
 use JsonException;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
@@ -22,11 +21,13 @@ use const JSON_THROW_ON_ERROR;
 class HerodotController extends Controller
 {
     /**
-     * @return View
+     * @return string
      */
-    public function webPage(): View
+    public function webPage(): string
     {
-        return ViewFacade::make('herodot::index');
+        $path = Config::get('herodot.blade.output_file');
+
+        return Storage::get($path);
     }
 
     /**
@@ -51,7 +52,6 @@ class HerodotController extends Controller
      */
     public function openapi(): BinaryFileResponse
     {
-
         return Response::file($this->disk()->get(
             'herodot/openapi.yaml'
         ));
