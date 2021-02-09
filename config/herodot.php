@@ -161,27 +161,22 @@ return [
     |
     */
     'markdown' => [
-        'config' => [
-            'renderer' => [
-                'block_separator' => PHP_EOL,
-                'inner_separator' => PHP_EOL,
-                'soft_break' => PHP_EOL,
-            ],
-            'enable_em' => true,
-            'enable_strong' => true,
-            'use_asterisk' => true,
-            'use_underscore' => true,
-            'unordered_list_markers' => ['-', '*', '+'],
-
-            // We trust the developers to _not_ put malicious code into their
-            // own documentation code. Otherwise lots of markdown features do
-            // not work properly.
-            'html_input' => 'allow',
-            'allow_unsafe_links' => true,
-            'max_nesting_level' => INF,
+        'renderer' => [
+            'block_separator' => PHP_EOL,
+            'inner_separator' => PHP_EOL,
+            'soft_break' => PHP_EOL,
         ],
+        'enable_em' => true,
+        'enable_strong' => true,
+        'use_asterisk' => true,
+        'use_underscore' => true,
+        'unordered_list_markers' => ['-', '*', '+'],
 
-        // You can pass a custom environment here
-        // 'environment' => new Environment([]),
+        // We trust the developers to _not_ put malicious code into their
+        // own documentation code. Otherwise lots of markdown features do
+        // not work properly.
+        'html_input' => 'allow',
+        'allow_unsafe_links' => true,
+        'max_nesting_level' => INF,
     ],
 ];

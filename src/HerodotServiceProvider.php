@@ -191,7 +191,7 @@ class HerodotServiceProvider extends ServiceProvider
 
                 // Allow users to override the environment configuration
                 $environment->mergeConfig(Config::get(
-                    'herodot.markdown.config',
+                    'herodot.markdown',
                     []
                 ));
 
