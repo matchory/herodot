@@ -119,7 +119,7 @@ return [
         'output_format' => 'yaml',
 
         // The output file will be written to disk
-        'output_file' => 'public/openapi.yaml',
+        'output_file' => 'herodot/openapi.yaml',
     ],
 
     /*

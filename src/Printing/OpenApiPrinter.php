@@ -27,6 +27,7 @@ use cebe\openapi\Writer;
 use Illuminate\Config\Repository;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use JetBrains\PhpStorm\Pure;
 use Matchory\Herodot\Contracts\Endpoint;
 use Matchory\Herodot\Contracts\Printer;
@@ -117,9 +118,10 @@ class OpenApiPrinter implements Printer
      */
     public function dump(OpenApi $spec): void
     {
-        # Writer::writeToYaml($spec);
+        $outputFile = Storage::disk('local')->path(
+            $this->config[self::CONFIG_OUTPUT_FILE]
+        );
 
-        $outputFile = $this->config[self::CONFIG_OUTPUT_FILE];
         try {
             switch ($this->config[self::CONFIG_OUTPUT_FORMAT]) {
                 case self::OUTPUT_FORMAT_JSON:
