@@ -153,10 +153,5 @@ class HerodotServiceProvider extends ServiceProvider
                 'herodot.printers',
                 []
             ));
-
-        $this->app
-            ->when(OpenApiPrinter::class)
-            ->needs('$config')
-            ->give(Config::get('herodot.open_api', []));
     }
 }
