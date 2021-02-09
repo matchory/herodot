@@ -33,25 +33,22 @@ class HerodotServiceProvider extends ServiceProvider
 {
     public const TAG_CONFIG = 'config';
 
+    public const TAG_PUBLIC = 'public';
+
+    public const TAG_VIEWS = 'views';
+
+    /**
+     * @throws LogicException
+     */
     public function boot(): void
     {
-        $this->loadViewsFrom(
-            __DIR__ . '/../resources/views/',
-            'herodot'
-        );
+        $this->loadViews();
 
         if ( ! $this->app->runningInConsole()) {
             return;
         }
 
-        $this->publishes([
-            __DIR__ . '/../resources/views' => $this->app->basePath('resources/views/vendor/matchory'),
-        ], 'views');
-
-        $this->publishes([
-            __DIR__ . '/../config/herodot.php' => $this->app->configPath('herodot.php'),
-        ], self::TAG_CONFIG);
-
+        $this->publishAssets();
         $this->bindCommands();
         $this->bindImplementations();
     }
@@ -76,6 +73,43 @@ class HerodotServiceProvider extends ServiceProvider
                 __DIR__ . '/../routes/herodot.php'
             );
         }
+    }
+
+    private function loadViews(): void
+    {
+        $this->loadViewsFrom(
+            __DIR__ . '/../resources/views/',
+            'herodot'
+        );
+
+        $this->loadViewComponentsAs('herodot', [
+            Group::class,
+            Endpoint::class,
+            EndpointHeader::class,
+            EndpointTitle::class,
+            EndpointUri::class,
+            EndpointInfo::class,
+            EndpointSample::class,
+            Deprecated::class,
+            Required::class,
+            Optional::class,
+            Type::class,
+        ]);
+    }
+
+    private function publishAssets(): void
+    {
+        $this->publishes([
+            __DIR__ . '/../resources/views' => $this->app->resourcePath('views/vendor/matchory'),
+        ], self::TAG_VIEWS);
+
+        $this->publishes([
+            __DIR__ . '/../public' => $this->app->basePath('public/vendor/matchory'),
+        ], self::TAG_PUBLIC);
+
+        $this->publishes([
+            __DIR__ . '/../config/herodot.php' => $this->app->configPath('herodot.php'),
+        ], self::TAG_CONFIG);
     }
 
     private function bindCommands(): void

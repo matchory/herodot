@@ -1,0 +1,8 @@
+@layer utilities {
+    @supports (backdrop-filter: blur(0)) {
+        .backdrop-blur {
+            @apply bg-opacity-80;
+            backdrop-filter: saturate(180%) blur(20px);
+        }
+    }
+}

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf7b4e54cd1dfb66fffbb96da0894f98",
+    "content-hash": "be668d2d48d5edfbd719ed32fa1c5133",
     "packages": [
         {
             "name": "brick/math",
@@ -1073,6 +1073,60 @@
             "time": "2020-12-22T16:13:18+00:00"
         },
         {
+            "name": "illuminate/view",
+            "version": "v8.26.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/view.git",
+                "reference": "696a1d6d2213be192429e97245a3d2bb4d6d1849"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/view/zipball/696a1d6d2213be192429e97245a3d2bb4d6d1849",
+                "reference": "696a1d6d2213be192429e97245a3d2bb4d6d1849",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/collections": "^8.0",
+                "illuminate/container": "^8.0",
+                "illuminate/contracts": "^8.0",
+                "illuminate/events": "^8.0",
+                "illuminate/filesystem": "^8.0",
+                "illuminate/macroable": "^8.0",
+                "illuminate/support": "^8.0",
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "8.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\View\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate View package.",
+            "homepage": "https://laravel.com",
+            "support": {
+                "issues": "https://github.com/laravel/framework/issues",
+                "source": "https://github.com/laravel/framework"
+            },
+            "time": "2020-11-02T14:01:41+00:00"
+        },
+        {
             "name": "justinrainbow/json-schema",
             "version": "5.2.10",
             "source": {
@@ -1137,6 +1191,107 @@
                 "schema"
             ],
             "time": "2020-05-27T16:41:55+00:00"
+        },
+        {
+            "name": "league/commonmark",
+            "version": "1.5.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/commonmark.git",
+                "reference": "11df9b36fd4f1d2b727a73bf14931d81373b9a54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/11df9b36fd4f1d2b727a73bf14931d81373b9a54",
+                "reference": "11df9b36fd4f1d2b727a73bf14931d81373b9a54",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": "^7.1 || ^8.0"
+            },
+            "conflict": {
+                "scrutinizer/ocular": "1.7.*"
+            },
+            "require-dev": {
+                "cebe/markdown": "~1.0",
+                "commonmark/commonmark.js": "0.29.2",
+                "erusev/parsedown": "~1.0",
+                "ext-json": "*",
+                "github/gfm": "0.29.0",
+                "michelf/php-markdown": "~1.4",
+                "mikehaertl/php-shellcommand": "^1.4",
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.2",
+                "scrutinizer/ocular": "^1.5",
+                "symfony/finder": "^4.2"
+            },
+            "bin": [
+                "bin/commonmark"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\CommonMark\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Colin O'Dell",
+                    "email": "colinodell@gmail.com",
+                    "homepage": "https://www.colinodell.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "Highly-extensible PHP Markdown parser which fully supports the CommonMark spec and Github-Flavored Markdown (GFM)",
+            "homepage": "https://commonmark.thephpleague.com",
+            "keywords": [
+                "commonmark",
+                "flavored",
+                "gfm",
+                "github",
+                "github-flavored",
+                "markdown",
+                "md",
+                "parser"
+            ],
+            "support": {
+                "docs": "https://commonmark.thephpleague.com/",
+                "issues": "https://github.com/thephpleague/commonmark/issues",
+                "rss": "https://github.com/thephpleague/commonmark/releases.atom",
+                "source": "https://github.com/thephpleague/commonmark"
+            },
+            "funding": [
+                {
+                    "url": "https://enjoy.gitstore.app/repositories/thephpleague/commonmark",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.colinodell.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.paypal.me/colinpodell/10.00",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/colinodell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/colinodell",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/league/commonmark",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-10-31T13:49:32+00:00"
         },
         {
             "name": "marcj/topsort",
@@ -5154,5 +5309,5 @@
     "platform-overrides": {
         "ext-redis": "1.0.0"
     },
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }

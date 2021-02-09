@@ -1,2 +1,6 @@
 /.idea/
 /vendor/
+/node_modules/
+
+/public/css/style.css
+/public/css/style.css.map

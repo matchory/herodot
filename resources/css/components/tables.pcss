@@ -1,0 +1,17 @@
+.herodot-table {
+    @apply w-full text-left text-sm;
+}
+
+.herodot-table > thead > tr > th {
+    @apply sticky top-14 z-10 bg-white backdrop-blur py-2 pr-2 font-normal;
+
+    box-shadow: 0 1px 0 0 theme('colors.gray.200');
+}
+
+.herodot-table > tbody > tr > td {
+    @apply py-2 pr-2;
+}
+
+.herodot-table > tbody > tr > td > code {
+    @apply inline-block py-1 px-2 bg-gray-100 rounded text-xs;
+}
