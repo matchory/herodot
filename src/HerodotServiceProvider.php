@@ -71,10 +71,7 @@ class HerodotServiceProvider extends ServiceProvider
      */
     protected function bindRoutes(): void
     {
-        if (
-            Config::get('herodot.type', 'static') === 'laravel' &&
-            Config::get('herodot.laravel.add_routes', true)
-        ) {
+        if (Config::get('herodot.laravel.add_routes', true)) {
             $this->loadRoutesFrom(
                 __DIR__ . '/../routes/herodot.php'
             );
