@@ -12,9 +12,9 @@ trait IsParameter
 {
     protected string $name;
 
-    protected ?string $type;
+    protected ?string $type = null;
 
-    protected ?string $description;
+    protected ?string $description = null;
 
     protected bool $required = false;
 
@@ -22,13 +22,13 @@ trait IsParameter
 
     protected bool $writeOnly = false;
 
-    protected mixed $example;
+    protected mixed $example = null;
 
-    protected mixed $default;
+    protected mixed $default = null;
 
     protected ?Deprecation $deprecation = null;
 
-    protected ?array $validationRules;
+    protected ?array $validationRules = null;
 
     #[Pure] public function getName(): string
     {
@@ -97,19 +97,19 @@ trait IsParameter
     }
 
     /**
-     * @param mixed $example
+     * @param mixed $default
      *
      * @throws LogicException
      */
-    protected function setDefault(mixed $example): void
+    protected function setDefault(mixed $default): void
     {
-        if ($this->required) {
+        if ($this->required && $default !== null) {
             throw new LogicException(
                 'Required parameters may not have a default'
             );
         }
 
-        $this->example = $example;
+        $this->default = $default;
     }
 
     #[Pure] public function getDeprecation(): ?Deprecation
