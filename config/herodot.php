@@ -117,7 +117,70 @@ return [
         // OpenAPI documents can be "yaml" or "json"
         'output_format' => 'yaml',
 
+        // The output file will be written to disk
+        'output_file' => 'public/openapi.yaml',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Blade Printer Settings
+    |--------------------------------------------------------------------------
+    |
+    | This array contains several settings for the OpenAPI writer included with
+    | Herodot by default.
+    |
+    */
+    'blade' => [
+        'name' => env('APP_NAME'),
+        'api_url' => env('APP_URL'),
+
         // The output file will be written to the
-        'output_file' => public_path('openapi.yaml'),
+        'output_file' => 'herodot/index.html',
+
+        'header_links' => [
+            'home' => '/',
+            'external' => 'https://google.com',
+        ],
+
+        'footer_links' => [
+            'Contact' => '/contact-us',
+            'Terms Of Service' => '/terms',
+            'Privacy Policy' => '/privacy',
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Markdown Parser Settings
+    |--------------------------------------------------------------------------
+    |
+    | This array contains all settings for the CommonMark library used to
+    | parse any long-form text, for example in descriptions. Only those printers
+    | targeting HTML will use the Markdown parser.
+    |
+    */
+    'markdown' => [
+        'config' => [
+            'renderer' => [
+                'block_separator' => PHP_EOL,
+                'inner_separator' => PHP_EOL,
+                'soft_break' => PHP_EOL,
+            ],
+            'enable_em' => true,
+            'enable_strong' => true,
+            'use_asterisk' => true,
+            'use_underscore' => true,
+            'unordered_list_markers' => ['-', '*', '+'],
+
+            // We trust the developers to _not_ put malicious code into their
+            // own documentation code. Otherwise lots of markdown features do
+            // not work properly.
+            'html_input' => 'allow',
+            'allow_unsafe_links' => true,
+            'max_nesting_level' => INF,
+        ],
+
+        // You can pass a custom environment here
+        // 'environment' => new Environment([]),
     ],
 ];

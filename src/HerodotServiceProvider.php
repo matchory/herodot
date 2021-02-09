@@ -6,6 +6,11 @@ namespace Matchory\Herodot;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
+use League\CommonMark\CommonMarkConverter;
+use League\CommonMark\Environment;
+use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
+use League\CommonMark\MarkdownConverterInterface;
+use LogicException;
 use Matchory\Herodot\Console\Commands\GenerateCommand;
 use Matchory\Herodot\Console\Commands\OverrideCommand;
 use Matchory\Herodot\Contracts\DocumentationWriter as WriterContract;
@@ -17,10 +22,20 @@ use Matchory\Herodot\Contracts\RouteProcessor as ProcessorContract;
 use Matchory\Herodot\Contracts\RouteResolver as ResolverContract;
 use Matchory\Herodot\Factories\EndpointFactory;
 use Matchory\Herodot\Printing\DocumentationWriter;
-use Matchory\Herodot\Printing\OpenApiPrinter;
 use Matchory\Herodot\Processing\RouteProcessor;
 use Matchory\Herodot\RouteCollecting\RouteCollector;
 use Matchory\Herodot\RouteCollecting\RouteResolver;
+use Matchory\Herodot\View\Components\Badges\Deprecated;
+use Matchory\Herodot\View\Components\Badges\Optional;
+use Matchory\Herodot\View\Components\Badges\Required;
+use Matchory\Herodot\View\Components\Badges\Type;
+use Matchory\Herodot\View\Components\Endpoint;
+use Matchory\Herodot\View\Components\EndpointHeader;
+use Matchory\Herodot\View\Components\EndpointInfo;
+use Matchory\Herodot\View\Components\EndpointSample;
+use Matchory\Herodot\View\Components\EndpointTitle;
+use Matchory\Herodot\View\Components\EndpointUri;
+use Matchory\Herodot\View\Components\Group;
 use phpDocumentor\Reflection\DocBlockFactory;
 use phpDocumentor\Reflection\DocBlockFactoryInterface;
 
@@ -120,6 +135,9 @@ class HerodotServiceProvider extends ServiceProvider
         ]);
     }
 
+    /**
+     * @throws LogicException
+     */
     private function bindImplementations(): void
     {
         $this->app->bind(CollectorContract::class, Config::get(
@@ -164,6 +182,38 @@ class HerodotServiceProvider extends ServiceProvider
                 'herodot.doc_block_factory',
                 DocBlockFactory::class
             )
+        );
+
+        $this->app->singleton(
+            'herodot.markdown.environment',
+            function () {
+                $environment = Environment::createGFMEnvironment();
+
+                // Allow users to override the environment configuration
+                $environment->mergeConfig(Config::get(
+                    'herodot.markdown.config',
+                    []
+                ));
+
+                $environment->addExtension(
+                    new HeadingPermalinkExtension()
+                );
+
+                return $environment;
+            }
+        );
+
+        $this->app->singleton(
+            'herodot.markdown',
+            fn() => new CommonMarkConverter(
+                [],
+                $this->app->get('herodot.markdown.environment'),
+            )
+        );
+
+        $this->app->alias(
+            'herodot.markdown',
+            MarkdownConverterInterface::class
         );
 
         // Ensure the default route processor receives all configured extraction
