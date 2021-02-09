@@ -349,16 +349,20 @@ class DocBlockStrategy implements ExtractionStrategy
             //       the PHPDoc description format used here.
             ::of($docBlock->getDescription()->render())
 
+            // TODO: These stay disabled for now, as they mess with the Markdown
+            //       parser. Proper space handling should be revisited later.
+
             // Ensure we remove all lone line breaks, but preserve any that
             // occur in sequence. This prevents description text aligned to
             // a maximum line length having seemingly random breaks, but
             // still allows to separate text into paragraphs.
-            ->replaceMatches('/\n([^\s])/', ' $1')
+            // ->replaceMatches('/\n([^\s])/', ' $1')
 
             // Replace double spaces (Markdown) or break tags (HTML) with
             // actual line breaks. While we're probably going to output
             // either later on, we can standardize it this way.
-            ->replace(['  ', '<br>'], "\n");
+            // ->replace(['  ', '<br>'], "\n")
+        ;
 
         if ($descriptionText->isNotEmpty()) {
             $endpoint->setDescription((string)$descriptionText);
