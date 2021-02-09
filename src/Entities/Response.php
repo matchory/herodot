@@ -15,10 +15,7 @@ class Response implements StructureInterface
 
     public const DEFAULT_STATUS = 200;
 
-    /**
-     * @var mixed
-     */
-    protected $example;
+    protected mixed $example;
 
     protected string $contentType;
 
