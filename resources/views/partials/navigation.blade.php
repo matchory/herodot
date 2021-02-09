@@ -24,7 +24,7 @@
                         @foreach($endpoints as $endpoint)
                             <li>
                                 <a href="#{{ Str::slug($group . ' ' . $endpoint->getTitle()) }}"
-                                   class="text-gray-600 hover:text-blue-500 text-sm">
+                                   class="text-gray-600 dark:text-gray-400 hover:text-blue-500 text-sm">
                                     {{ rtrim($endpoint->getTitle(), '.') }}
                                 </a>
                             </li>

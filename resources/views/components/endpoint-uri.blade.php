@@ -8,7 +8,7 @@
         @foreach ($segments() as $segment)
             <span>/</span>
             @if ($segmentIsParam($segment))
-                <span class="bg-blue-100 p-0.5 rounded font-bold">{{ $segment }}</span>
+                <span class="bg-blue-100 dark:bg-blue-900 dark:bg-opacity-50 p-0.5 rounded font-bold">{{ $segment }}</span>
             @else
                 <span>{{ $segment }}</span>
             @endif

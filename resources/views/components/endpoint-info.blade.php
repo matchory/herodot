@@ -20,7 +20,7 @@
             <ul>
 
                 @foreach($endpoint->getUrlParams() as $param)
-                    <li class="py-2 border-t border-gray-200">
+                    <li class="py-2 border-t border-gray-200 dark:border-gray-700">
                         <div class="flex items-center text-xs">
                             <code class="text-sm">
                                 {{ $param->getName() }}
@@ -45,7 +45,7 @@
                             @if ($param->getDescription())
                                 <p class="text-gray-700">{{ $param->getDescription() }}</p>
                             @else
-                                <span class="text-gray-400">No description available</span>
+                                <span class="text-gray-400 dark:text-gray-400">No description available</span>
                             @endif
                         </div>
                     </li>
@@ -62,7 +62,7 @@
 
             <ul>
                 @foreach($endpoint->getQueryParams() as $param)
-                    <li class="py-2 border-t border-gray-200">
+                    <li class="py-2 border-t border-gray-200 dark:border-gray-700">
                         <div class="flex items-center text-xs">
                             <code class="text-sm">
                                 {{ $param->getName() }}
@@ -83,7 +83,7 @@
                             @endif
                         </div>
 
-                        <p class="mt-2 text-sm text-gray-700">{{ $param->getDescription() }}</p>
+                        <p class="mt-2 text-sm text-gray-700 dark:text-gray-400">{{ $param->getDescription() }}</p>
                     </li>
                 @endforeach
             </ul>
@@ -98,7 +98,7 @@
 
             <ul>
                 @foreach($endpoint->getBodyParams() as $param)
-                    <li class="py-2 border-t border-gray-200">
+                    <li class="py-2 border-t border-gray-200 dark:border-gray-700">
                         <div class="flex items-center text-xs">
                             <code class="text-sm">
                                 {{ $param->getName() }}
@@ -119,7 +119,7 @@
                             @endif
                         </div>
 
-                        <p class="mt-2 text-sm text-gray-700">{{ $param->getDescription() }}</p>
+                        <p class="mt-2 text-sm text-gray-700 dark:text-gray-400">{{ $param->getDescription() }}</p>
                     </li>
                 @endforeach
             </ul>

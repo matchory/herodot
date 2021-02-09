@@ -1,5 +1,5 @@
 .markdown {
-    @apply text-base text-black text-opacity-75 break-words leading-relaxed;
+    @apply text-base text-black dark:text-white text-opacity-75 break-words leading-relaxed;
 }
 
 .markdown h1,
@@ -37,7 +37,7 @@
 
 .markdown h1,
 .markdown h2 {
-    @apply pb-1 border-b border-gray-100;
+    @apply pb-1 border-b border-gray-100 dark:border-gray-800;
 }
 
 .markdown .heading-permalink {
@@ -84,7 +84,7 @@
 }
 
 .markdown hr {
-    @apply h-1 p-0 my-4 overflow-visible overflow-hidden bg-gray-200;
+    @apply h-0.5 my-4 p-0 border-0 overflow-visible overflow-hidden bg-gray-200 dark:bg-gray-700;
 }
 
 .markdown hr::after,
@@ -128,7 +128,15 @@
 
 .markdown ol,
 .markdown ul {
-    @apply pl-8 my-0 list-disc;
+    @apply pl-8 my-0;
+}
+
+.markdown ul {
+    @apply list-disc;
+}
+
+.markdown ol {
+    @apply list-decimal;
 }
 
 .markdown ol ul,
@@ -219,7 +227,7 @@
 }
 
 .markdown blockquote {
-    @apply px-4 text-gray-500 border-l-4 border-gray-300;
+    @apply px-4 text-gray-500 dark:text-gray-400 border-l-4 border-gray-300 dark:border-gray-700;
 }
 
 .markdown blockquote > :first-child {
@@ -252,19 +260,19 @@
 
 .markdown table td,
 .markdown table th {
-    @apply py-2 px-4 border border-gray-300;
+    @apply py-2 px-4 border border-gray-300 dark:border-gray-700;
 }
 
 .markdown table tr {
-    @apply bg-white dark:bg-black border-t border-gray-400;
+    @apply bg-white dark:bg-gray-900 border-t border-gray-400 dark:border-gray-700;
 }
 
 .markdown table tr:nth-child(2n) {
-    @apply bg-gray-100;
+    @apply bg-gray-100 dark:bg-gray-800;
 }
 
 .markdown code {
-    @apply m-0 py-1 px-1.5 text-xs rounded-sm bg-gray-100;
+    @apply m-0 py-1 px-1.5 text-xs rounded-sm bg-gray-100 dark:bg-gray-800;
 }
 
 .markdown pre {
@@ -276,5 +284,5 @@
 }
 
 .markdown pre {
-    @apply p-4 overflow-auto text-sm leading-snug bg-gray-50 rounded-sm;
+    @apply p-4 overflow-auto text-sm leading-snug bg-gray-50 dark:bg-gray-800 rounded;
 }
