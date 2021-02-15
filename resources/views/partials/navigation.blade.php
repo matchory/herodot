@@ -4,12 +4,12 @@
             {{ config('herodot.blade.title', config('app.name')) }}
         </h1>
 
-        <!--
-        <button>
-            <span class="material-icons">light_mode</span>
-            <span class="material-icons">dark_mode</span>
+        <button class="p-2 rounded-full focus:outline-none bg-gray-100 hover:bg-gray-200 focus:ring dark:focus:ring-blue-500 text-gray-500 dark:bg-gray-600 dark:hover:bg-gray-700 dark:text-gray-100"
+                data-theme-toggle>
+            <span class="material-icons theme-toggle theme-toggle--light">light_mode</span>
+            <span class="material-icons theme-toggle theme-toggle--dark">dark_mode</span>
+            <span class="material-icons theme-toggle theme-toggle--auto">brightness_auto</span>
         </button>
-        -->
     </header>
 
     <div class="relative overflow-y-auto p-4">

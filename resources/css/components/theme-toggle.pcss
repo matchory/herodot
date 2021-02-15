@@ -1,0 +1,38 @@
+.light .theme-toggle.theme-toggle--light {
+    @apply hidden;
+}
+
+.light .theme-toggle.theme-toggle--dark {
+    @apply hidden;
+}
+
+.light .theme-toggle.theme-toggle--auto {
+    @apply block;
+}
+
+.dark .theme-toggle.theme-toggle--auto {
+    @apply hidden;
+}
+
+.dark .theme-toggle.theme-toggle--dark {
+    @apply hidden;
+}
+
+.dark .theme-toggle.theme-toggle--light {
+    @apply block;
+}
+
+.dark.auto .theme-toggle.theme-toggle--auto,
+.light.auto .theme-toggle.theme-toggle--auto {
+    @apply hidden;
+}
+
+.dark.auto .theme-toggle.theme-toggle--light,
+.light.auto .theme-toggle.theme-toggle--light {
+    @apply hidden;
+}
+
+.dark.auto .theme-toggle.theme-toggle--dark,
+.light.auto .theme-toggle.theme-toggle--dark {
+    @apply block;
+}

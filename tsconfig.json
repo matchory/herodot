@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "incremental": true,
+        "target": "es5",
+        "module": "esnext",
+        "allowJs": true,
+        "checkJs": true,
+        "declaration": false,
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "removeComments": true,
+        "lib": [
+            "dom"
+        ],
+        "strict": true,
+        "baseUrl": ".",
+        "paths": {
+            "@*": [
+                "./resources/ts*"
+            ]
+        },
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "include": [
+        "./resources/ts/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "./node_modules",
+        "./node_modules/*",
+        "./node_modules/@types/node/index.d.ts"
+    ]
+}

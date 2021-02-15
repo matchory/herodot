@@ -4,8 +4,9 @@ const { fontFamily } = require( 'tailwindcss/defaultTheme' );
 module.exports = {
     purge:    [
         './resources/views/**/*.blade.php',
+        './resources/ts/**/*.ts',
     ],
-    darkMode: 'media',
+    darkMode: 'class',
     theme:    {
         extend: {
             colors:     {

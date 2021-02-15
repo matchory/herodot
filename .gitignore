@@ -1,6 +1,9 @@
 /.idea/
 /vendor/
 /node_modules/
+yarn-error.log
 
-/public/css/style.css
-/public/css/style.css.map
+/public/main.css
+/public/main.css.map
+/public/bundle.js
+/public/bundle.js.map
