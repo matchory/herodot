@@ -6,38 +6,18 @@ namespace Matchory\Herodot\View\Components;
 
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Str;
-use Illuminate\View\Component;
-use Illuminate\View\ComponentAttributeBag;
 use League\CommonMark\MarkdownConverterInterface;
+use Matchory\Herodot\Entities\Page as PageEntity;
 use RuntimeException;
 
-class Page extends Component
+class Page extends AbstractHerodotComponent
 {
-    /**
-     * @var string|null
-     */
-    public $componentName = null;
-
-    /**
-     * @var ComponentAttributeBag|null
-     */
-    public $attributes = null;
-
-    protected string $title;
-
-    protected string $content;
-
-    protected MarkdownConverterInterface $markdownConverter;
+    protected ?string $parsedContent = null;
 
     public function __construct(
-        MarkdownConverterInterface $markdownConverter,
-        string $title,
-        string $content
+        protected MarkdownConverterInterface $markdownConverter,
+        public PageEntity $page
     ) {
-        $this->title = $title;
-        $this->content = $content;
-        $this->markdownConverter = $markdownConverter;
     }
 
     public function render(): ViewContract
@@ -51,19 +31,22 @@ class Page extends Component
      */
     public function content(): string
     {
-        return $this->markdownConverter->convertToHtml(
-            $this
-                ->content
-        );
+        if ( ! $this->parsedContent) {
+            $this->parsedContent = $this->markdownConverter->convertToHtml(
+                $this->page->content()
+            );
+        }
+
+        return $this->parsedContent;
     }
 
     public function slug(): string
     {
-        return Str::slug($this->title);
+        return $this->page->slug();
     }
 
     public function title(): string
     {
-        return $this->title;
+        return $this->page->title();
     }
 }

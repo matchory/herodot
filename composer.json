@@ -39,7 +39,8 @@
     "cebe/php-openapi": "^1.4",
     "illuminate/config": "^8.21",
     "illuminate/view": "^8.26",
-    "league/commonmark": "^1.5"
+    "league/commonmark": "^1.5",
+    "spatie/yaml-front-matter": "^2.0"
   },
   "extra": {
     "laravel": {

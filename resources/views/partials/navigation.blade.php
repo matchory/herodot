@@ -11,17 +11,18 @@
             <span class="material-icons theme-toggle theme-toggle--auto">brightness_auto</span>
         </button>
     </header>
-
     <div class="relative overflow-y-auto p-4">
-        <ul>
-            @foreach ($pages->keys() as $title)
-                <li class="@if(!$loop->first) mt-4 @endif">
-                    <a href="#{{ Str::slug($title) }}" class="hover:text-blue-500">
-                        {{ $title }}
-                    </a>
-                </li>
-            @endforeach
-        </ul>
+        @unless ($pages->isEmpty())
+            <ul class="mb-4">
+                @foreach ($pages as $page)
+                    <li class="@if(!$loop->first) mt-4 @endif">
+                        <a href="#{{ $page->slug() }}" class="hover:text-blue-500">
+                            {{ $page->title() }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        @endunless
 
         <ul>
             @foreach($groups as $group => $endpoints)
