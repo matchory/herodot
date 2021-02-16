@@ -14,6 +14,16 @@
 
     <div class="relative overflow-y-auto p-4">
         <ul>
+            @foreach ($pages->keys() as $title)
+                <li class="@if(!$loop->first) mt-4 @endif">
+                    <a href="#{{ Str::slug($title) }}" class="hover:text-blue-500">
+                        {{ $title }}
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+
+        <ul>
             @foreach($groups as $group => $endpoints)
                 <li class="@if(!$loop->first) mt-4 @endif">
                     <a href="#{{ Str::slug($group) }}" class="hover:text-blue-500">

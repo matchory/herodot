@@ -135,8 +135,15 @@ return [
         'name' => env('APP_NAME'),
         'api_url' => env('APP_URL'),
 
-        // The output file will be written to the
+        // The output file will be written to disk
         'output_file' => 'herodot/index.html',
+
+        // The directory to load additional pages from. They will be added as
+        // top-level items in the navigation, and parsed as Markdown (with HTML
+        // support, of course).
+        // The path is relative to your project root.
+        'pages_directory' => 'docs',
+        'pages_extensions' => ['md', 'markdown', 'html'],
 
         'header_links' => [
             'home' => '/',

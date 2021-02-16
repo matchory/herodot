@@ -13,8 +13,12 @@
 
 @section('content')
     <article class="container mx-auto py-8">
+        @foreach($pages as $title => $content)
+            <x-herodot-page :title="$title" :content="$content"/>
+        @endforeach
+
         @foreach ($groups as $name => $endpoints)
-            <x-herodot-group :name="$name" :endpoints="$endpoints"></x-herodot-group>
+            <x-herodot-group :name="$name" :endpoints="$endpoints"/>
         @endforeach
     </article>
 @endsection

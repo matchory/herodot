@@ -36,6 +36,7 @@ use Matchory\Herodot\View\Components\EndpointSample;
 use Matchory\Herodot\View\Components\EndpointTitle;
 use Matchory\Herodot\View\Components\EndpointUri;
 use Matchory\Herodot\View\Components\Group;
+use Matchory\Herodot\View\Components\Page;
 use phpDocumentor\Reflection\DocBlockFactory;
 use phpDocumentor\Reflection\DocBlockFactoryInterface;
 
@@ -98,6 +99,7 @@ class HerodotServiceProvider extends ServiceProvider
         );
 
         $this->loadViewComponentsAs('herodot', [
+            Page::class,
             Group::class,
             Endpoint::class,
             EndpointHeader::class,
