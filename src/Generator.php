@@ -107,7 +107,7 @@ class Generator
         $hash = $this->generateCombinedHash($routes);
 
         // If the endpoints didn't change since the last invocation, use the
-        // cached variant
+        // cached variant.
         if ($this->hasCached($hash)) {
             return $this->loadCached($hash);
         }
@@ -126,10 +126,9 @@ class Generator
                 $route
             ))
 
-            // By filtering the resulting collection again, we make sure
-            // to remove all routes deemed unsuitable by any information
-            // extraction strategy, for example a hidden attribute in
-            // the code.
+            // By filtering the resulting collection again, we make sure to
+            // remove all routes deemed unsuitable by any information extraction
+            // strategy, for example a hidden attribute in the code.
             ->filter();
 
         // 4. Store intermediate format
