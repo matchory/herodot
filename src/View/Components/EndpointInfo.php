@@ -6,34 +6,18 @@ namespace Matchory\Herodot\View\Components;
 
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\Support\Facades\View;
-use Illuminate\View\Component;
-use Illuminate\View\ComponentAttributeBag;
 use League\CommonMark\MarkdownConverterInterface;
 use Matchory\Herodot\Entities;
 use RuntimeException;
 
-class EndpointInfo extends Component
+class EndpointInfo extends AbstractHerodotComponent
 {
-    /**
-     * @var string|null
-     */
-    public $componentName = null;
-
-    /**
-     * @var ComponentAttributeBag|null
-     */
-    public $attributes = null;
-
-    public Entities\Endpoint $endpoint;
-
-    protected MarkdownConverterInterface $markdownConverter;
+    protected ?string $parsedContent = null;
 
     public function __construct(
-        MarkdownConverterInterface $markdownConverter,
-        Entities\Endpoint $endpoint
+        public Entities\Endpoint $endpoint,
+        protected MarkdownConverterInterface $markdownConverter
     ) {
-        $this->endpoint = $endpoint;
-        $this->markdownConverter = $markdownConverter;
     }
 
     public function render(): ViewContract
@@ -47,13 +31,14 @@ class EndpointInfo extends Component
      */
     public function description(): string
     {
-        $description = $this->endpoint->getDescription();
-
-        if ( ! $description) {
-            return '';
+        if ( ! $this->parsedContent) {
+            $content = $this->endpoint->getDescription();
+            $this->parsedContent = $content
+                ? $this->markdownConverter->convertToHtml($content)
+                : '';
         }
 
-        return $this->markdownConverter->convertToHtml($description);
+        return $this->parsedContent;
     }
 
     public function hasParameters(): bool
