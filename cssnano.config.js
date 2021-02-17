@@ -1,4 +1,3 @@
 module.exports = {
-    preset: {},
-
+    preset: 'default',
 };
