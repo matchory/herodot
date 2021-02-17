@@ -14,6 +14,7 @@
         "postcss": "^8.2.6",
         "postcss-import": "^14.0.0",
         "postcss-loader": "^5.0.0",
+        "prismjs": "^1.23.0",
         "style-loader": "^2.0.0",
         "tailwindcss": "^2.0.3",
         "ts-loader": "^8.0.17",
