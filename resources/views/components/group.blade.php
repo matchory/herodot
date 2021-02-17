@@ -1,4 +1,4 @@
-<section class="herodot-endpoint-groups__endpoint-group">
+<section class="xl:p-16">
     @if ($name)
         <header class="mx-8 pb-4">
             <h2 class="text-3xl leading-relaxed" id="{{ Str::slug($name) }}">

@@ -1,4 +1,4 @@
-<article class="mb-8">
+<article class="mb-8 xl:p-16">
     <header class="mx-8 pb-4">
         <h2 class="text-3xl leading-relaxed" id="{{ $page->slug() }}">
             <a href="#{{ $page->slug() }}">{{ $page->title() }}</a>

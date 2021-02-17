@@ -18,4 +18,11 @@ class EndpointSample extends AbstractHerodotComponent
     {
         return View::make('herodot::components.endpoint-sample');
     }
+
+    public function sampleJavaScript(): string
+    {
+        $url = $this->endpoint->getUri();
+
+        return "fetch({$url});";
+    }
 }

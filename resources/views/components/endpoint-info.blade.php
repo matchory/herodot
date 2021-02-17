@@ -2,7 +2,7 @@
 /* @var Matchory\Herodot\Entities\Endpoint $endpoint */
 
 ?>
-<div {{ $attributes->merge([ 'class' => 'flex-grow-0 flex-shrink-0 w-1/2' ]) }}>
+<div {{ $attributes->merge([ 'class' => '' ]) }}>
     <div class="text-base leading-relaxed mb-4">
         @if ($endpoint->getDescription())
             <div class="markdown">{!! trim($description()) !!}</div>
